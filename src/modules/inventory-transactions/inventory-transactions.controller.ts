@@ -21,14 +21,4 @@ export class InventoryTransactionsController {
   findOne(@Param('id') id: string) {
     return this.inventoryTransactionsService.findOne(+id);
   }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateInventoryTransactionDto: UpdateInventoryTransactionDto) {
-    return this.inventoryTransactionsService.update(+id, updateInventoryTransactionDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.inventoryTransactionsService.remove(+id);
-  }
 }
