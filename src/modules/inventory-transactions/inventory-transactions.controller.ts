@@ -12,13 +12,23 @@ export class InventoryTransactionsController {
     return this.inventoryTransactionsService.create(createInventoryTransactionDto);
   }
 
-  @Get()
+  @Get('/transaction')
   findAll() {
     return this.inventoryTransactionsService.findAll();
   }
 
-  @Get(':id')
+  @Get('transaction/:id')
   findOne(@Param('id') id: string) {
     return this.inventoryTransactionsService.findOne(+id);
+  }
+
+  @Get('stock')
+  getMaterialsStock() {
+    return this.inventoryTransactionsService.getMaterialsStock();
+  }
+
+  @Get('stock/:materialId')
+  getMaterialStock(@Param('materialId') materialId: string) {
+    return this.inventoryTransactionsService.getMaterialStock(+materialId);
   }
 }
